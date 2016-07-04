@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Prism.Unity.Windows;
 using Prism.Windows.AppModel;
+using UWPApiUI.Constants;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -34,7 +36,7 @@ namespace UWPApiUI
 
         protected override UIElement CreateShell(Frame rootFrame)
         {
-            var shell = Container.Resolve<MainPage>();
+            var shell = Container.Resolve<AppShell>();
             shell.SetContentFrame(rootFrame);
             return shell;
         }
@@ -42,13 +44,13 @@ namespace UWPApiUI
         protected override Task OnInitializeAsync(IActivatedEventArgs args)
         {
             //Container.RegisterInstance<IResourceLoader>(new ResourceLoaderAdapter(new ResourceLoader()));
-            //return base.OnInitializeAsync(args);
-            return Task.FromResult(true);
+            return base.OnInitializeAsync(args);
+            //return Task.FromResult(true);
         }
 
         protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
         {
-            //NavigationService.Navigate(PageTokens.MainPage, null);
+            NavigationService.Navigate(PageTokens.HomePage, null);
             return Task.FromResult(true);
         }
         

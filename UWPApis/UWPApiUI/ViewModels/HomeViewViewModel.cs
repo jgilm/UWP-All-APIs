@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prism.Windows.Mvvm;
 
-namespace UWPApiUI.Constants
+namespace UWPApiUI.ViewModels
 {
-    static class PageTokens
+    class HomeViewViewModel: ViewModelBase
     {
-        public const string HomePage = "Home";
+
     }
 }

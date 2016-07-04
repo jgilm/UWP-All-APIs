@@ -1,8 +1,7 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
-    "Prism.Unity": "6.1.1",
-    "Prism.Windows": "6.0.1"
+    "Prism.Unity": "6.1.1"
   },
   "frameworks": {
     "uap10.0": {}
