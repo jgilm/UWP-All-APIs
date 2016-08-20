@@ -9,5 +9,6 @@ namespace UWPApiUI.Constants
     static class PageTokens
     {
         public const string HomePage = "Home";
+        public const string CameraPage = "Camera";
     }
 }

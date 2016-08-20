@@ -46,23 +46,24 @@
             <SplitView.Pane>
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0">
+                    <ToggleButton x:Name="togglePaneButton" Grid.Row="0"
+                      IsChecked="{Binding IsPaneOpen,
+                                          ElementName=rootSplitView,
+                                          Mode=TwoWay}"
+                      Style="{StaticResource SplitViewTogglePaneButtonStyle}"
+                      TabIndex="1" />
+
+                    <StackPanel Grid.Row="1">
                         <Button Command="{Binding NavigateToProjectPageCommand}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <FontIcon Grid.Column="0" Glyph="&#xe187;" />
-                                <TextBlock Grid.Column="1"
-                                           Text="Tool 1" />
-                            </Grid>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <FontIcon Glyph="&#xe187;" FontSize="36" Margin="0"/>
+                                    <TextBlock Text="Tool 1" VerticalAlignment="Center"/>
+
+                               </StackPanel>
                         </Button>
                     </StackPanel>
 
@@ -84,11 +85,6 @@
             </SplitView.Content>
         </SplitView>
         
-        <ToggleButton x:Name="togglePaneButton" Grid.Row="0"
-                      IsChecked="{Binding IsPaneOpen,
-                                          ElementName=rootSplitView,
-                                          Mode=TwoWay}"
-                      Style="{StaticResource SplitViewTogglePaneButtonStyle}"
-                      TabIndex="1" />
+
     </Grid>
 </Page>
